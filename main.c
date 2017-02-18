@@ -694,112 +694,457 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
 
     if (front_f[0][2] == 1 && top_f[2][2] == 3 && right_f[0][0] == 4 && top_f[1][2] == 3 && right_f[0][1] == 4) {
         // 1ª possibilidade
-        printf("1ª possibilidade\n");
+        printf("[EASY CASE 1º CASO]  1ª possibilidade\n");
         topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (left_f[0][2] == 1 && top_f[2][0] == 3 && front_f[0][0] == 4 && top_f[2][1] == 3 && front_f[0][1] == 4) {
         //2ª possibilidade
-        printf("2ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 2ª possibilidade\n");
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (back_f[0][0] == 1 && top_f[0][0] == 3 && top_f[1][0] == 3 && left_f[0][0] == 4 && left_f[0][1] == 4) {
         //3ª possibilidade
-        printf("3ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 3ª possibilidade\n");
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (right_f[0][2] == 1 && top_f[0][1] == 3 && top_f[0][2] == 3 && back_f[0][2] == 4 && back_f[0][1] == 4) {
         //4ª possibilidade
-        printf("4ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 4ª possibilidade\n");
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (front_f[0][2] == 1 && top_f[2][2] == 6 && top_f[1][2] == 6 && right_f[0][0] == 3 && right_f[0][1] == 3) {
         // 5ª possibilidade
-        printf("5ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 5ª possibilidade\n");
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (left_f[0][2] == 1 && top_f[2][0] == 6 && top_f[2][1] == 6 && front_f[0][0] == 3 && front_f[0][1] == 3) {
         //6ª possibilidade
-        printf("6ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 6ª possibilidade\n");
         topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (back_f[0][0] == 1 && top_f[0][0] == 6 && top_f[1][0] == 6 && left_f[0][0] == 3 && left_f[0][1] == 3) {
         //7ª possibilidade
-        printf("7ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 7ª possibilidade\n");
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (right_f[0][2] == 1 && top_f[0][2] == 6 && top_f[0][1] == 6 && back_f[0][1] == 3 && back_f[0][2] == 3) {
         //8ª possibilidade
-        printf("8ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 8ª possibilidade\n");
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (front_f[0][2] == 1 && top_f[2][2] == 5 && top_f[1][2] == 5 && right_f[0][0] == 6 && right_f[0][1] == 6) {
         //9ª possibilidade
-        printf("9ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 9ª possibilidade\n");
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (left_f[0][2] == 1 && top_f[2][0] == 5 && top_f[2][1] == 5 && front_f[0][0] == 6 && front_f[0][1] == 6) {
         //10ª possibilidade
-        printf("10ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 10ª possibilidade\n");
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (back_f[0][0] == 1 && top_f[0][0] == 5 && top_f[1][0] == 5 && left_f[0][0] == 6 && left_f[0][1] == 6) {
         //11ª possibilidade
-        printf("11ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 11ª possibilidade\n");
         topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (right_f[0][2] == 1 && top_f[0][1] == 5 && top_f[0][2] == 5 && back_f[0][1] == 6 && back_f[0][2] == 6) {
         //12ª possibilidade
-        printf("12ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 12ª possibilidade\n");
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (front_f[0][2] == 1 && top_f[2][2] == 4 && top_f[1][2] == 4 && right_f[0][0] == 5 && right_f[0][1] == 5) {
         //13ª possibilidade
-        printf("13ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 13ª possibilidade\n");
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (left_f[0][2] == 1 && top_f[2][0] == 4 && top_f[2][1] == 4 && front_f[0][0] == 5 && front_f[0][1] == 5) {
         //14ª possibilidade
-        printf("14ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 14ª possibilidade\n");
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (back_f[0][0] == 1 && top_f[0][0] == 4 && top_f[1][0] == 4 && left_f[0][0] == 5 && left_f[0][1] == 5) {
         //15ª possibilidade
-        printf("15ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 15ª possibilidade\n");
         topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     } else if (right_f[0][2] == 1 && top_f[0][1] == 4 && top_f[0][2] == 4 && back_f[0][1] == 5 && back_f[0][2] == 5) {
         //16ª possibilidade
-        printf("16ª possibilidade\n");
+        printf("[EASY CASE 1º CASO] [TESTE] 16ª possibilidade\n");
         topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     }
 
-     // FIM do 1º (U (R U' R')) 
+    // FIM do 1º (U (R U' R')) 
 
+
+    // 2º (y' (R' U' R)) ==> F'U'F  - 16 possibilidades
+
+    if (front_f[0][2] == 1 && top_f[2][2] == 3 && right_f[0][0] == 4 && top_f[1][0] == 4 && left_f[0][1] == 3) {
+        //1ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 1ª possibilidade\n");
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && top_f[2][0] == 3 && front_f[0][0] == 4 && top_f[0][1] == 4 && back_f[0][1] == 3) {
+        //2ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && left_f[0][0] == 4 && top_f[0][0] == 3 && top_f[1][2] == 4 && right_f[0][1] == 3) {
+        //3ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 3 && back_f[0][2] == 4 && top_f[2][1] == 4 && front_f[0][1] == 3) {
+        //4ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && top_f[2][0] == 6 && front_f[0][0] == 3 && top_f[0][1] == 3 && back_f[0][1] == 6) {
+        //5ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 5ª possibilidade\n");
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && left_f[0][0] == 3 && top_f[0][0] == 6 && top_f[1][2] == 3 && right_f[0][1] == 6) {
+        //6ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 6ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 6 && back_f[0][2] == 3 && top_f[2][1] == 3 && front_f[0][1] == 6) {
+        //7ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 7ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][2] == 1 && top_f[2][2] == 6 && right_f[0][0] == 3 && top_f[1][0] == 3 && left_f[0][1] == 6) {
+        //8ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 8ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && top_f[0][0] == 5 && left_f[0][0] == 6 && top_f[1][2] == 6 && right_f[0][1] == 5) {
+        //9ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 9ª possibilidade\n");
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 5 && back_f[0][2] == 6 && top_f[2][1] == 6 && front_f[0][1] == 5) {
+        //10ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 10ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][2] == 1 && top_f[2][2] == 5 && right_f[0][0] == 6 && top_f[1][0] == 6 && left_f[0][1] == 5) {
+        //11ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 11ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && top_f[2][0] == 5 && front_f[0][0] == 6 && top_f[0][1] == 6 && back_f[0][1] == 5) {
+        //12ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 12ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 4 && back_f[0][2] == 5 && top_f[2][1] == 5 && front_f[0][1] == 4) {
+        //13ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 13ª possibilidade\n");
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][2] == 1 && top_f[2][2] == 4 && right_f[0][0] == 5 && top_f[1][0] == 5 && left_f[0][1] == 4) {
+        //14ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 14ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && top_f[2][0] == 4 && front_f[0][0] == 5 && top_f[0][1] == 5 && back_f[0][1] == 4) {
+        //15ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 15ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && top_f[0][0] == 4 && left_f[0][0] == 5 && top_f[1][2] == 5 && right_f[0][1] == 4) {
+        //16ª possibilidade
+        printf("[EASY CASE 2º CASO] [TESTE] 16ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+    // FIM do 2º (y' (R' U' R)) ==> F'U'F
+
+
+    // 3º (y' U' (R' U R)) ==> U' F' U F  - 16 possibilidades
+
+    if (top_f[2][1] == 4 && top_f[2][2] == 4 && right_f[0][0] == 1 && front_f[0][1] == 3 && front_f[0][2] == 3) {
+        //1ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 1ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[2][0] == 4 && top_f[1][0] == 4 && left_f[0][1] == 3 && left_f[0][2] == 3) {
+        //2ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 2ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 4 && top_f[0][1] == 4 && back_f[0][0] == 3 && back_f[0][1] == 3) {
+        //3ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 3ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && top_f[0][2] == 4 && top_f[1][2] == 4 && right_f[0][1] == 3 && right_f[0][2] == 3) {
+        //4ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 4ª possibilidade\n");
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[1][0] == 3 && top_f[2][0] == 3 && left_f[0][1] == 6 && left_f[0][2] == 6) {
+        //5ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 5ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 3 && top_f[0][1] == 3 && back_f[0][0] == 6 && back_f[0][1] == 6) {
+        //6ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 6ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && top_f[0][2] == 3 && top_f[1][2] == 3 && right_f[0][1] == 6 && right_f[0][2] == 6) {
+        //7ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 7ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][0] == 1 && top_f[2][1] == 3 && top_f[2][2] == 3 && front_f[0][1] == 6 && front_f[0][2] == 6) {
+        //8ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 8ª possibilidade\n");
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 6 && top_f[0][1] == 6 && back_f[0][0] == 5 && back_f[0][1] == 5) {
+        //9ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 9ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && top_f[0][2] == 6 && top_f[1][2] == 6 && right_f[0][1] == 5 && right_f[0][2] == 5) {
+        //10ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 10ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][0] == 1 && top_f[2][1] == 6 && top_f[2][2] == 6 && front_f[0][1] == 5 && front_f[0][2] == 5) {
+        //11ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 11ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[1][0] == 6 && top_f[2][0] == 6 && left_f[0][1] == 5 && left_f[0][2] == 5) {
+        //12ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 12ª possibilidade\n");
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && top_f[0][2] == 5 && top_f[1][2] == 5 && right_f[0][1] == 4 && right_f[0][2] == 4) {
+        //13ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 13ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][0] == 1 && top_f[2][1] == 5 && top_f[2][2] == 5 && front_f[0][1] == 4 && front_f[0][2] == 4) {
+        //14ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 14ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[1][0] == 5 && top_f[2][0] == 5 && left_f[0][1] == 4 && left_f[0][2] == 4) {
+        //15ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 15ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 5 && top_f[0][1] == 5 && back_f[0][0] == 4 && back_f[0][1] == 4) {
+        //16ª possibilidade
+        printf("[EASY CASE 3º CASO] [TESTE] 16ª possibilidade\n");
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+    // FIM do 3º (y' U' (R' U R)) ==> U' F' U F
+
+
+    // 4º (R U R')  - 16 possibilidades
+    if (right_f[0][0] == 1 && top_f[2][2] == 4 && front_f[0][2] == 3 && top_f[0][1] == 3 && back_f[0][1] == 4) {
+        //1ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 1ª possibilidade\n");
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[2][0] == 4 && left_f[0][2] == 3 && top_f[1][2] == 3 && right_f[0][1] == 4) {
+        //2ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 4 && back_f[0][0] == 3 && top_f[2][1] == 3 && front_f[0][1] == 4) {
+        //3ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && top_f[0][2] == 4 && right_f[0][2] == 3 && top_f[1][0] == 3 && left_f[0][1] == 4) {
+        //4ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(front_f[0][0] == 1 && top_f[2][0] == 3 && left_f[0][2] == 6 && top_f[1][2] == 6 && right_f[0][1] == 3){
+        //5ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 5ª possibilidade\n");
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(left_f[0][0] == 1 && top_f[0][0] == 3 && back_f[0][0] == 6 && top_f[2][1] == 6 && front_f[0][1] == 3){
+        //6ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 6ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(back_f[0][2] == 1 && top_f[0][2] == 3 && right_f[0][2] == 6 && top_f[1][0] == 6 && left_f[0][1] == 3) {
+        //7ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 7ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(right_f[0][0] == 1 && top_f[2][2] == 3 && front_f[0][2] == 6 && top_f[0][1] == 6 && back_f[0][1] == 3){
+        //8ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 8ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(left_f[0][0] == 1 && top_f[0][0] == 6 && back_f[0][0] == 5 && top_f[2][1] == 5 && front_f[0][1] == 6){
+        //9ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 9ª possibilidade\n");
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(back_f[0][2] == 1 && top_f[0][2] == 6 && right_f[0][2] == 5 && top_f[1][0] == 5 && left_f[0][1] == 6){
+        //10ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 10ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[2][2] == 6 && front_f[0][2] == 5 && right_f[0][0] == 1 && top_f[0][1] == 5 && back_f[0][1] == 6){
+        //11ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 11ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(front_f[0][0] == 1 && top_f[2][0] == 6 && left_f[0][2] == 5 && top_f[1][2] == 5 && right_f[0][1] == 6){
+        //12ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 12ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][2] == 5 && right_f[0][2] == 4 && back_f[0][2] == 1 && top_f[1][0] == 4 && left_f[0][1] == 5){
+        //13ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 13ª possibilidade\n");
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(right_f[0][0] == 1 && top_f[2][2] == 5 && front_f[0][2] == 4 && top_f[0][1] == 4 && back_f[0][1] == 5){
+        //14ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 14ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(front_f[0][0] == 1 && top_f[2][0] == 5 && left_f[0][2] == 4 && top_f[1][2] == 4 && right_f[0][1] == 5){
+        //15ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 15ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(left_f[0][0] == 1 && top_f[0][0] == 5 && back_f[0][0] == 4 && top_f[2][1] == 4 && front_f[0][1] == 5){
+        //16ª possibilidade
+        printf("[EASY CASE 4º CASO] [TESTE] 16ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    // FIM do // 4º (R U R')
+    
+    // FIM do EASY CASES (1-4)
 }
 
 void imprimirCubo(struct Cubo cubo) {
@@ -917,11 +1262,11 @@ int main(int argc, char** argv) {
 
 
     backClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     backIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-
-
+    
+    
     montando = 1;
 
     imprimirCubo(cubo);
