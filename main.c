@@ -3718,6 +3718,139 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
     
     // PAIR MADE ON SIDE (19-22)
     
+    // 1º U (R U 2 R') U (R U' R') - 16 possibilidades
+    
+    if(front_f[0][2] == 4 && top_f[2][2] == 1 && right_f[0][0] == 3 && top_f[0][1] == 3 && back_f[0][1] == 4){
+        // 1ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 1ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(left_f[0][2] == 4 && top_f[2][0] == 1 && front_f[0][0] == 3 && top_f[1][2] == 3 && right_f[0][1] == 4){
+        // 2ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 2ª possibilidade\n");
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(back_f[0][0] == 4 && top_f[0][0] == 1 && left_f[0][0] == 3 && top_f[2][1] == 3 && front_f[0][1] == 4){
+        // 3ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 3ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][2] == 1 && back_f[0][2] == 3 && right_f[0][2] == 4 && top_f[1][0] == 3 && left_f[0][1] == 4){
+        // 4ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 4ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[2][0] == 1 && left_f[0][2] == 3 && front_f[0][0] == 6 && top_f[1][2] == 6 && right_f[0][1] == 3){
+        // 5ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 5ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(back_f[0][0] == 3 && top_f[0][0] == 1 && left_f[0][0] == 6 && top_f[2][1] == 6 && front_f[0][1] == 3){
+        // 6ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 6ª possibilidade\n");
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][2] == 1 && back_f[0][2] == 6 && right_f[0][2] == 3 && top_f[1][0] == 6 && left_f[0][1] == 3){
+        // 7ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 7ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[2][2] == 1 && front_f[0][2] == 3 && right_f[0][0] == 6 && top_f[0][1] == 6 && back_f[0][1] == 3){
+        // 8ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 8ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][0] == 1 && back_f[0][0] == 6 && left_f[0][0] == 5 && top_f[2][1] == 5 && front_f[0][1] == 6){
+        // 9ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 9ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][2] == 1 && back_f[0][2] == 5 && right_f[0][2] == 6 && top_f[1][0] == 5 && left_f[0][1] == 6){
+        // 10ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 10ª possibilidade\n");
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[2][2] == 1 && front_f[0][2] == 6 && right_f[0][0] == 5 && top_f[0][1] == 5 && back_f[0][1] == 6){
+        // 11ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 11ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[2][0] == 1 && front_f[0][0] == 5 && left_f[0][2] == 6 && top_f[1][2] == 5 && right_f[0][1] == 6){
+        // 12ª possibilidade
+        printf("[PAIR MADE ON SIDE 1º CASO] [TESTE] 12ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
 }
 
 void imprimirCubo(struct Cubo cubo) {
@@ -3834,14 +3967,14 @@ int main(int argc, char** argv) {
     }
 
 
-    rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    leftClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    leftIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    leftClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     topClock180(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    leftIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock180(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
 
 
     montando = 1;
