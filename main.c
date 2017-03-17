@@ -55,6 +55,8 @@ int right_2[3];
 int rightI_1[3];
 int rightI_2[3];
 
+//int contador = 0;
+
 void turnClock(int face[][3]) {
     int aux1, aux2;
     //girando os elementos das pontas
@@ -210,7 +212,7 @@ void setRight(int face[][3], int r[]) {
 
 //MÉTODOS DA CLASSE CUBO
 
-void frontClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+void girandoFront(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
 
     turnClock(front_f);
     getBottom(top_f, 1);
@@ -221,25 +223,40 @@ void frontClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[]
     setLeft(right_f, bottom_1);
     setTop(bottom_f, leftI_1);
     setRight(left_f, top_1);
+    // if (montando == 1) {
+    //     strcat(historyMoviments, "frontClock\n");
+    // }
+
+}
+
+void frontClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "frontClock\n");
+    }
+}
+
+void frontClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+
+    girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "frontClock180\n");
     }
 
 }
 
-void frontClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-
-}
-
 void frontIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "frontIClock\n");
+    }
 }
 
-void rightClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+void girandoRight(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
     turnClock(right_f);
     getRightI(top_f, 1);
     getRightI(back_f, 2);
@@ -249,24 +266,40 @@ void rightClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[]
     setRight(back_f, rightI_1);
     setRight(bottom_f, rightI_2);
     setRight(front_f, right_1);
+    // if (montando == 1) {
+    //   strcat(historyMoviments, "rightClock\n");
+    // }
+}
+
+void rightClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "rightClock\n");
     }
 }
 
 void rightClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "rightClock180\n");
+    }
+
 }
 
 void rightIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "rightIClock\n");
+    }
     //historyMoviments += "rightIClock\n";
 }
 
-void leftClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+void girandoLeft(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
     turnClock(left_f);
     getLeft(top_f, 1);
     getLeft(front_f, 2);
@@ -276,26 +309,39 @@ void leftClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][
     setLeft(front_f, left_1);
     setLeft(bottom_f, left_2);
     setLeft(back_f, leftI_1);
+    //if (montando == 1) {
+    //    strcat(historyMoviments, "leftClock\n");
+    //}
+}
+
+void leftClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "leftClock\n");
-
     }
 }
 
 void leftClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "leftClock180\n");
+    }
     //historyMoviments += "leftClock180\n";
 }
 
 void leftIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "leftIClock\n");
+    }
     //historyMoviments += "leftIClock\n";
 }
 
-void bottomIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+void girandoBottom(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
     turnIClock(bottom_f);
     getBottom(right_f, 1);
     getBottom(front_f, 2);
@@ -305,26 +351,40 @@ void bottomIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f
     setBottom(front_f, bottom_1);
     setBottom(left_f, bottom_2);
     setBottom(back_f, bottomI_1);
+    //if (montando == 1) {
+    //     strcat(historyMoviments, "bottomIClock\n");
+    //}
+}
+
+void bottomIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "bottomIClock\n");
     }
-
 }
 
 void bottomClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    bottomIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    bottomIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "bottomClock180\n");
+    }
     //historyMoviments += "bottomClock180\n";
 }
 
 void bottomClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    bottomIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    bottomIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    bottomIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "bottomClock\n");
+    }
     //historyMoviments += "bottomClock\n";
 }
 
-void backIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+void girandoBack(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
     turnClock(back_f);
     getTop(top_f, 1);
     getRightI(right_f, 1);
@@ -334,27 +394,42 @@ void backIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[]
     setRight(right_f, top_1);
     setBottom(bottom_f, rightI_1);
     setLeft(left_f, bottom_1);
-    if (montando == 1) {
-        strcat(historyMoviments, "backIClock\n");
-    }
+    // if (montando == 1) {
+    //     strcat(historyMoviments, "backIClock\n");
+    // }
 
 }
 
+void backIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "backIClock\n");
+    }
+}
+
 void backClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "backClock180\n");
+    }
     //historyMoviments += "backClock180\n";
 }
 
 void backClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "backClock\n");
+    }
     //historyMoviments += "backClock\n";
 
 }
 
-void topClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+void girandoTop(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
     turnClock(top_f);
     getTop(right_f, 1);
     getTop(front_f, 2);
@@ -364,22 +439,37 @@ void topClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3
     setTop(front_f, top_1);
     setTop(left_f, top_2);
     setTop(back_f, topI_1);
-    if (montando == 1) {
-        strcat(historyMoviments, "topClock\n");
-    }
+    //   if (montando == 1) {
+    //     strcat(historyMoviments, "topClock\n");
+    // }
 
 }
 
+void topClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "topClock\n");
+    }
+}
+
 void topClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "topClock180\n");
+    }
     //historyMoviments += "topClock180\n";
 }
 
 void topIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
-    topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+
+    girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    if (montando == 1) {
+        strcat(historyMoviments, "topIClock\n");
+    }
     //historyMoviments += "topIClock\n";
 }
 
@@ -7194,7 +7284,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(left_f[2][2] == 6 && front_f[2][0] == 3 && bottom_f[0][0] == 1 && front_f[1][0] == 6 && left_f[1][2] == 3){
+    } else if (left_f[2][2] == 6 && front_f[2][0] == 3 && bottom_f[0][0] == 1 && front_f[1][0] == 6 && left_f[1][2] == 3) {
         // 2ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 3º CASO] [TESTE] 2ª possibilidade\n");
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7208,7 +7298,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(back_f[2][0] == 5 && left_f[2][0] == 6 && bottom_f[2][0] == 1 && left_f[1][0] == 5 && back_f[1][0] == 6){
+    } else if (back_f[2][0] == 5 && left_f[2][0] == 6 && bottom_f[2][0] == 1 && left_f[1][0] == 5 && back_f[1][0] == 6) {
         // 3ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 3º CASO] [TESTE] 3ª possibilidade\n");
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7222,7 +7312,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(right_f[2][2] == 4 && back_f[2][2] == 5 && bottom_f[2][2] == 1 && right_f[1][2] == 5 && back_f[1][2] == 4){
+    } else if (right_f[2][2] == 4 && back_f[2][2] == 5 && bottom_f[2][2] == 1 && right_f[1][2] == 5 && back_f[1][2] == 4) {
         // 4ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 3º CASO] [TESTE] 4ª possibilidade\n");
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7237,12 +7327,12 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     }
-    
+
     // FIM do 3º (R U' R') d (R' U 2 R) U 2 ' (R' U R) ==> R U R' U² R U² R' U F' U' F
-    
+
     // 4º (R U' R' U)(R U 2 ' R') U (R U' R') - 4 possibilidades
-    
-    if(front_f[1][2] == 3 && right_f[1][0] == 4 && front_f[2][2] == 4 && right_f[2][0] == 1 && bottom_f[0][2] == 3){
+
+    if (front_f[1][2] == 3 && right_f[1][0] == 4 && front_f[2][2] == 4 && right_f[2][0] == 1 && bottom_f[0][2] == 3) {
         // 1ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 4º CASO] [TESTE] 1ª possibilidade\n");
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7256,7 +7346,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(left_f[1][2] == 6 && front_f[1][0] == 3 && front_f[2][0] == 1 && left_f[2][2] == 3 && bottom_f[0][0] == 6){
+    } else if (left_f[1][2] == 6 && front_f[1][0] == 3 && front_f[2][0] == 1 && left_f[2][2] == 3 && bottom_f[0][0] == 6) {
         // 2ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 4º CASO] [TESTE] 2ª possibilidade\n");
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7270,7 +7360,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(left_f[1][0] == 6 && left_f[2][0] == 1 && back_f[1][0] == 5 && back_f[2][0] == 6 && bottom_f[2][0] == 5){
+    } else if (left_f[1][0] == 6 && left_f[2][0] == 1 && back_f[1][0] == 5 && back_f[2][0] == 6 && bottom_f[2][0] == 5) {
         // 3ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 4º CASO] [TESTE] 3ª possibilidade\n");
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7284,7 +7374,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(right_f[1][2] == 4 && right_f[2][2] == 5 && back_f[1][2] == 5 && back_f[2][2] == 1 && bottom_f[2][2] == 4){
+    } else if (right_f[1][2] == 4 && right_f[2][2] == 5 && back_f[1][2] == 5 && back_f[2][2] == 1 && bottom_f[2][2] == 4) {
         // 4ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 4º CASO] [TESTE] 4ª possibilidade\n");
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7299,12 +7389,12 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     }
-    
+
     // FIM do 4º (R U' R' U)(R U 2 ' R') U (R U' R')
-    
+
     // 5º (R U R' U')(R U' R') U 2 (F' U' F)
 
-    if(front_f[1][2] == 4 && front_f[2][2] == 4 && right_f[1][0] == 3 && right_f[2][0] == 1 && bottom_f[0][2] == 3){
+    if (front_f[1][2] == 4 && front_f[2][2] == 4 && right_f[1][0] == 3 && right_f[2][0] == 1 && bottom_f[0][2] == 3) {
         // 1ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 5º CASO] [TESTE] 1ª possibilidade\n");
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7318,7 +7408,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(front_f[1][0] == 6 && front_f[2][0] == 1 && left_f[1][2] == 3 && left_f[2][2] == 3 && bottom_f[0][0] == 6){
+    } else if (front_f[1][0] == 6 && front_f[2][0] == 1 && left_f[1][2] == 3 && left_f[2][2] == 3 && bottom_f[0][0] == 6) {
         // 2ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 5º CASO] [TESTE] 2ª possibilidade\n");
         frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7332,7 +7422,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(left_f[1][0] == 5 && left_f[2][0] == 1 && back_f[1][0] == 6 && back_f[2][0] == 6 && bottom_f[2][0] == 5){
+    } else if (left_f[1][0] == 5 && left_f[2][0] == 1 && back_f[1][0] == 6 && back_f[2][0] == 6 && bottom_f[2][0] == 5) {
         // 3ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 5º CASO] [TESTE] 3ª possibilidade\n");
         leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7346,7 +7436,7 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
-    } else if(right_f[1][2] == 5 && right_f[2][2] == 5 && back_f[1][2] == 4 && back_f[2][2] == 1 && bottom_f[2][2] == 4){
+    } else if (right_f[1][2] == 5 && right_f[2][2] == 5 && back_f[1][2] == 4 && back_f[2][2] == 1 && bottom_f[2][2] == 4) {
         // 4ª possibilidade
         printf("[EDGE AND CORNER IN PLACE 5º CASO] [TESTE] 4ª possibilidade\n");
         backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
@@ -7361,14 +7451,1031 @@ void f2l(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
         rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     }
-    
-    
+
+
     // 5º (R U R' U')(R U' R') U 2 (F' U' F)
-    
+
     // FIM do EDGE AND CORNER IN PLACE
 }
 
+void primeiraCamada(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    //FINALIZANDO PRIMEIRA CAMADA
+    //(1,3,4)
+    if (bottom_f[0][0] == 1 && front_f[2][0] == 4 && left_f[2][2] == 3) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (bottom_f[2][0] == 1 && left_f[2][0] == 4 && back_f[2][0] == 3) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (bottom_f[2][2] == 1 && right_f[2][2] == 3 && back_f[2][2] == 4) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[2][2] == 1 && bottom_f[0][2] == 4 && right_f[2][0] == 3) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[2][0] == 1 && bottom_f[0][0] == 3 && left_f[2][2] == 4) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][2] == 1 && top_f[2][2] == 3 && right_f[0][0] == 4) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[2][0] == 4 && left_f[0][2] == 3) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[2][2] == 1 && front_f[2][0] == 3 && bottom_f[0][0] == 4) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && front_f[0][0] == 4 && top_f[2][0] == 3) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 4 && back_f[0][0] == 3) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[2][0] == 1 && bottom_f[2][0] == 3 && back_f[2][0] == 4) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[2][0] == 1 && front_f[2][2] == 4 && bottom_f[0][2] == 3) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][0] == 1 && front_f[0][2] == 3 && top_f[2][2] == 4) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 3 && back_f[0][2] == 4) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[2][2] == 1 && bottom_f[2][2] == 4 && back_f[2][2] == 3) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][2] == 1 && front_f[0][2] == 4 && right_f[0][0] == 3) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][0] == 1 && front_f[0][0] == 3 && left_f[0][2] == 4) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][2] == 1 && right_f[0][2] == 4 && back_f[0][2] == 3) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][0] == 1 && left_f[0][0] == 3 && back_f[0][0] == 4) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && left_f[0][0] == 4 && top_f[0][0] == 3) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && right_f[0][2] == 3 && top_f[0][2] == 4) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[2][2] == 1 && bottom_f[2][2] == 3 && right_f[2][2] == 4) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[2][0] == 1 && left_f[2][0] == 3 && bottom_f[2][0] == 4) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
 
+    //(1,3,6)
+    if (bottom_f[2][0] == 1 && left_f[2][0] == 3 && back_f[2][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (bottom_f[2][2] == 1 && right_f[2][2] == 6 && back_f[2][2] == 3) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[2][0] == 1 && bottom_f[0][0] == 6 && left_f[2][2] == 3) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[2][0] == 3 && left_f[0][2] == 6) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][2] == 1 && top_f[2][2] == 6 && right_f[0][0] == 3) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[2][2] == 1 && front_f[2][0] == 6 && bottom_f[0][0] == 3) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[2][0] == 1 && back_f[2][0] == 3 && bottom_f[2][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && front_f[0][0] == 3 && top_f[2][0] == 6) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 3 && back_f[0][0] == 6) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][0] == 1 && front_f[0][2] == 6 && top_f[2][2] == 3) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 6 && back_f[0][2] == 3) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[2][2] == 1 && bottom_f[2][2] == 3 && back_f[2][2] == 6) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][0] == 1 && front_f[0][0] == 6 && left_f[0][2] == 3) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][2] == 1 && front_f[0][2] == 3 && right_f[0][0] == 6) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][2] == 1 && right_f[0][2] == 3 && back_f[0][2] == 6) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][0] == 1 && left_f[0][0] == 6 && back_f[0][0] == 3) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && left_f[0][0] == 3 && top_f[0][0] == 6) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && top_f[0][2] == 3 && right_f[0][2] == 6) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[2][0] == 1 && bottom_f[2][0] == 3 && left_f[2][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[2][2] == 1 && right_f[2][2] == 3 && bottom_f[2][2] == 6) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+    //(1, 6, 5)
+    if (bottom_f[2][2] == 1 && right_f[2][2] == 5 && back_f[2][2] == 6) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[2][0] == 1 && bottom_f[2][0] == 6 && left_f[2][0] == 5) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[2][2] == 1 && bottom_f[2][2] == 5 && right_f[2][2] == 6) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && top_f[0][0] == 5 && left_f[0][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && top_f[0][2] == 6 && right_f[0][2] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[2][0] == 1 && bottom_f[2][0] == 5 && back_f[2][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && front_f[0][0] == 6 && top_f[2][0] == 5) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 6 && back_f[0][0] == 5) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][0] == 1 && front_f[0][2] == 5 && top_f[2][2] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 5 && back_f[0][2] == 6) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[2][2] == 1 && bottom_f[2][2] == 6 && back_f[2][2] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[2][0] == 6 && left_f[0][2] == 5) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][2] == 1 && top_f[2][2] == 5 && right_f[0][0] == 6) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][0] == 1 && front_f[0][0] == 5 && left_f[0][2] == 6) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][2] == 1 && front_f[0][2] == 6 && right_f[0][0] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][0] == 1 && left_f[0][0] == 5 && back_f[0][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][2] == 1 && right_f[0][2] == 6 && back_f[0][2] == 5) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+    //(1, 4, 5)
+    if (right_f[2][2] == 1 && bottom_f[2][2] == 5 && back_f[2][2] == 4) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][2] == 1 && top_f[0][2] == 4 && back_f[0][2] == 5) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][0] == 1 && front_f[0][2] == 4 && top_f[2][2] == 5) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][2] == 1 && front_f[0][0] == 5 && top_f[2][0] == 4) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][0] == 1 && top_f[0][0] == 5 && back_f[0][0] == 4) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][0] == 1 && top_f[2][0] == 5 && left_f[0][2] == 4) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][2] == 1 && top_f[2][2] == 4 && right_f[0][0] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[2][2] == 1 && right_f[2][2] == 5 && bottom_f[2][2] == 4) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][2] == 1 && right_f[0][2] == 4 && top_f[0][2] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][0] == 1 && top_f[0][0] == 4 && left_f[0][0] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][0] == 1 && back_f[0][0] == 5 && left_f[0][0] == 4) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][2] == 1 && back_f[0][2] == 4 && right_f[0][2] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][0] == 1 && front_f[0][0] == 4 && left_f[0][2] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][2] == 1 && front_f[0][2] == 5 && right_f[0][0] == 4) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+}
+
+void segundaCamada(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+
+    //(3, 4)
+    if (front_f[1][0] == 3 && left_f[1][2] == 4) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[0][1] == 3 && top_f[2][1] == 4) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[1][2] == 3 && front_f[1][0] == 4) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[1][0] == 3 && back_f[1][0] == 4) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][1] == 3 && top_f[1][0] == 4) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[1][0] == 3 && front_f[1][2] == 4) {
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][1] == 3 && top_f[1][2] == 4) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[1][2] == 3 && back_f[1][2] == 4) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[1][0] == 3 && left_f[1][0] == 4) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[1][2] == 3 && right_f[1][2] == 4) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][1] == 3 && top_f[0][1] == 4) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][1] == 3 && front_f[0][1] == 4) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][0] == 3 && left_f[0][1] == 4) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][2] == 3 && right_f[0][1] == 4) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][1] == 3 && back_f[0][1] == 4) {
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+    //(3, 6)
+    if (front_f[0][1] == 3 && top_f[2][1] == 6) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[1][2] == 3 && front_f[1][0] == 6) {
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][1] == 3 && top_f[1][0] == 6) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[1][0] == 3 && back_f[1][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[1][0] == 3 && left_f[1][0] == 6) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[1][2] == 3 && right_f[1][2] == 6) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][1] == 3 && top_f[0][1] == 6) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[1][2] == 3 && back_f[1][2] == 6) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][1] == 3 && top_f[1][2] == 6) {
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][0] == 3 && left_f[0][1] == 6) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][1] == 3 && front_f[0][1] == 6) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][2] == 3 && right_f[0][1] == 6) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][1] == 3 && back_f[0][1] == 6) {
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+
+    //(6, 5)
+
+    if (front_f[0][1] == 6 && top_f[2][1] == 5) {
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][1] == 6 && top_f[1][0] == 5) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[1][0] == 6 && left_f[1][0] == 5) {
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[1][2] == 6 && right_f[1][2] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][1] == 6 && top_f[0][1] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[1][2] == 6 && back_f[1][2] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][1] == 6 && top_f[1][2] == 5) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][1] == 6 && front_f[0][1] == 5) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][2] == 6 && right_f[0][1] == 5) {
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][0] == 6 && left_f[0][1] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][1] == 6 && back_f[0][1] == 5) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+
+    //(4, 5)
+
+    if (front_f[0][1] == 4 && top_f[2][1] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (left_f[0][1] == 4 && top_f[1][0] == 5) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[0][1] == 4 && top_f[0][1] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (back_f[1][2] == 4 && right_f[1][2] == 5) {
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (right_f[0][1] == 4 && top_f[1][2] == 5) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][0] == 4 && left_f[0][1] == 5) {
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[2][1] == 4 && front_f[0][1] == 5) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[1][2] == 4 && right_f[0][1] == 5) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (top_f[0][1] == 4 && back_f[0][1] == 5) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+
+}
 
 void imprimirCubo(struct Cubo cubo) {
     int i, j;
@@ -7494,27 +8601,31 @@ int main(int argc, char** argv) {
     leftIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     frontIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     leftClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    //backIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    backIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock180(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
 
-    
+
+
     montando = 1;
 
     imprimirCubo(cubo);
 
     printf("\n\n");
 
-    
-    
+
+
     //CHAMANDO A CRUZ
     cruz(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    
+
     // CHAMANDO F2L
-    while(cont < 4){
+    while (cont < 4) {
         f2l(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
         cont++;
     }
-    
-    
+
+    primeiraCamada(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+
+    segundaCamada(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
 
 
     imprimirCubo(cubo);
