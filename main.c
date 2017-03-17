@@ -55,7 +55,7 @@ int right_2[3];
 int rightI_1[3];
 int rightI_2[3];
 
-//int contador = 0;
+int contMovimentos = 0;
 
 void turnClock(int face[][3]) {
     int aux1, aux2;
@@ -233,6 +233,7 @@ void frontClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[]
     girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "frontClock\n");
+        contMovimentos++;
     }
 }
 
@@ -242,6 +243,7 @@ void frontClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_
     girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "frontClock180\n");
+        contMovimentos++;
     }
 
 }
@@ -253,6 +255,7 @@ void frontIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[
     girandoFront(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "frontIClock\n");
+        contMovimentos++;
     }
 }
 
@@ -275,6 +278,7 @@ void rightClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[]
     girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "rightClock\n");
+        contMovimentos++;
     }
 }
 
@@ -284,6 +288,7 @@ void rightClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_
     girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "rightClock180\n");
+        contMovimentos++;
     }
 
 }
@@ -295,6 +300,7 @@ void rightIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[
     girandoRight(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "rightIClock\n");
+        contMovimentos++;
     }
     //historyMoviments += "rightIClock\n";
 }
@@ -318,6 +324,7 @@ void leftClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][
     girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "leftClock\n");
+        contMovimentos++;
     }
 }
 
@@ -327,6 +334,7 @@ void leftClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f
     girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "leftClock180\n");
+        contMovimentos++;
     }
     //historyMoviments += "leftClock180\n";
 }
@@ -337,6 +345,7 @@ void leftIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[]
     girandoLeft(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "leftIClock\n");
+        contMovimentos++;
     }
     //historyMoviments += "leftIClock\n";
 }
@@ -360,6 +369,7 @@ void bottomIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f
     girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "bottomIClock\n");
+        contMovimentos++;
     }
 }
 
@@ -369,6 +379,7 @@ void bottomClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top
     girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "bottomClock180\n");
+        contMovimentos++;
     }
     //historyMoviments += "bottomClock180\n";
 }
@@ -380,6 +391,7 @@ void bottomClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[
     girandoBottom(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "bottomClock\n");
+        contMovimentos++;
     }
     //historyMoviments += "bottomClock\n";
 }
@@ -404,6 +416,7 @@ void backIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[]
     girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "backIClock\n");
+        contMovimentos++;
     }
 }
 
@@ -413,6 +426,7 @@ void backClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f
     girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "backClock180\n");
+        contMovimentos++;
     }
     //historyMoviments += "backClock180\n";
 }
@@ -424,6 +438,7 @@ void backClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][
     girandoBack(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "backClock\n");
+        contMovimentos++;
     }
     //historyMoviments += "backClock\n";
 
@@ -449,6 +464,7 @@ void topClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3
     girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "topClock\n");
+        contMovimentos++;
     }
 }
 
@@ -458,6 +474,7 @@ void topClock180(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[
     girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "topClock180\n");
+        contMovimentos++;
     }
     //historyMoviments += "topClock180\n";
 }
@@ -469,6 +486,7 @@ void topIClock(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][
     girandoTop(left_f, front_f, right_f, top_f, bottom_f, back_f);
     if (montando == 1) {
         strcat(historyMoviments, "topIClock\n");
+        contMovimentos++;
     }
     //historyMoviments += "topIClock\n";
 }
@@ -8631,6 +8649,8 @@ int main(int argc, char** argv) {
     imprimirCubo(cubo);
 
     printf("%s", historyMoviments);
+    printf("\n\nQuantidade de movimentos: %d", contMovimentos);
+    
 
     return 0;
 }
