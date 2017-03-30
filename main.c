@@ -9362,6 +9362,68 @@ void oll(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
         leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
     }
     
+    // FIM do Squares
+    
+    // L SHAPES
+    
+    // 1º F (R U R' U') (R U R' U') F'
+    if(top_f[0][1] == 2 && top_f[1][0] == 2 && top_f[1][1] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && left_f[0][2] == 2 && left_f[0][0] == 2 && back_f[0][2] == 2){
+        // 1ª possibilidade
+        printf("[L SHAPES 1º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][1] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && front_f[0][1] == 2 && right_f[0][0] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2 && back_f[0][0] == 2 && back_f[0][2] == 2){
+        // 2ª possibilidade
+        printf("[L SHAPES 1º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[1][1] == 2 && top_f[1][2] == 2 && top_f[2][1] == 2 && front_f[0][0] == 2 && right_f[0][0] == 2 && right_f[0][2] == 2 && left_f[0][1] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2){
+        // 3ª possibilidade
+        printf("[L SHAPES 1º CASO (OLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[2][1] == 2 && front_f[0][0] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && back_f[0][1] == 2 && left_f[0][0] == 2){
+        // 4ª possibilidade
+        printf("[L SHAPES 1º CASO (OLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
 }
 
 void imprimirCubo(struct Cubo cubo) {
@@ -9478,13 +9540,16 @@ int main(int argc, char** argv) {
     }
 
 
-    leftClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     frontClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    frontClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    frontClock180(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    leftIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    frontIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     
     montando = 1;
