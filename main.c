@@ -10981,6 +10981,412 @@ void oll(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
     }
     
     // FIM do I SHAPES
+    
+    // KNIGHT MOVE SHAPES
+    
+    // 1º F U R U' R² F' R (U R U' R')
+    if(top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && top_f[2][0] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && right_f[0][2] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2){
+        // 1ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 1º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][0] == 2 && top_f[0][1] == 2 && top_f[1][1] == 2 && top_f[2][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2){
+        // 2ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 1º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][2] == 2 && top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && left_f[0][2] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2){
+        // 3ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 1º CASO (OLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][1] == 2 && top_f[1][1] == 2 && top_f[2][1] == 2 && top_f[2][2] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2 && back_f[0][0] == 2){
+        // 4ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 1º CASO (OLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    // 2º (l' U' l) (L' U' L U) (l' U l): R' F' R L' U' L U R' F R
+    if(top_f[0][0] == 2 && top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && right_f[0][2] == 2 && left_f[0][2] == 2 && back_f[0][1] == 2){
+        // 1ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 2º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][1] == 2 && top_f[0][2] == 2 && top_f[1][1] == 2 && top_f[2][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && left_f[0][2] == 2 && left_f[0][1] == 2 && back_f[0][0] == 2){
+        // 2ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 2º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && top_f[2][2] == 2 && front_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][2] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2){
+        // 3ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 2º CASO (OLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][1] == 2 && top_f[1][1] == 2 && top_f[2][0] == 2 && top_f[2][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][1] == 2 && back_f[0][0] == 2){
+        // 4ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 2º CASO (OLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    // 3º R' F R U R' F' R y' R U' R': R' F R U R' F' R F U' F'
+    if(top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && top_f[2][2] == 2 && front_f[0][0] == 2 && front_f[0][1] == 2 && left_f[0][0] == 2 && back_f[0][1] == 2 && back_f[0][2] == 2){
+        // 1ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 3º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][1] == 2 && top_f[1][1] == 2 && top_f[2][0] == 2 && top_f[2][1] == 2 && right_f[0][0] == 2 && right_f[0][1] == 2 && back_f[0][2] == 2 && left_f[0][1] == 2 && left_f[0][0] == 2){
+        // 2ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 3º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][0] == 2 && top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && front_f[0][0] == 2 && front_f[0][1] == 2 && right_f[0][0] == 2 && back_f[0][1] == 2 && back_f[0][2] == 2){
+        // 3ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 3º CASO (OLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][1] == 2 && top_f[0][2] == 2 && top_f[1][1] == 2 && top_f[2][1] == 2 && front_f[0][0] == 2 && right_f[0][0] == 2 && right_f[0][1] == 2 && left_f[0][1] == 2 && left_f[0][0] == 2){
+        // 4ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 3º CASO (OLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    // 4º (r U r') (R U R' U') (r U' r'): L F L' R U R' U' L F' L'
+    if(top_f[0][2] == 2 && top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && front_f[0][0] == 2 && front_f[0][1] == 2 && right_f[0][0] == 2 && left_f[0][0] == 2 && back_f[0][1] == 2){
+        // 1ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 4º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][1] == 2 && top_f[1][1] == 2 && top_f[2][1] == 2 && top_f[2][2] == 2 && front_f[0][0] == 2 && left_f[0][0] == 2 && left_f[0][1] == 2 && right_f[0][1] == 2 && back_f[0][2] == 2){
+        // 2ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 4º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[1][0] == 2 && top_f[1][1] == 2 && top_f[1][2] == 2 && top_f[2][0] == 2 && front_f[0][1] == 2 && right_f[0][0] == 2 && left_f[0][0] == 2 && back_f[0][1] == 2 && back_f[0][2] == 2){
+        // 3ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 4º CASO (OLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][0] == 2 && top_f[0][1] == 2 && top_f[1][1] == 2 && top_f[2][1] == 2 && front_f[0][0] == 2 && right_f[0][0] == 2 && right_f[0][1] == 2 && left_f[0][1] == 2 && back_f[0][2] == 2){
+        // 4ª possibilidade
+        printf("[KNIGHT MOVE SHAPES 4º CASO (OLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    // FIM do KNIGHT MOVE SHAPES
+    
+    // NO EDGES FLIPPED CORRECTLY
+    
+    // 1º R U² R² F R F' U² (R' F R F')
+    if(top_f[1][1] == 2 && front_f[0][1] == 2 && back_f[0][1] == 2 && right_f[0][0] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][0] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2){
+        // 1ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 1º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[1][1] == 2 && front_f[0][0] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2 && back_f[0][2] == 2 && right_f[0][1] == 2 && left_f[0][1] == 2){
+        // 2ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 1º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    // 2º [f (R U R' U') f'] U' [F (R U R' U') F']: B U L U' L' B' U' F R U R' U' F'
+    if(top_f[1][1] == 2 && top_f[2][2] == 2 && front_f[0][1] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2){
+        // 1ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 2º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[1][1] == 2 && top_f[2][0] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][1] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2){
+        // 2ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 2º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][0] == 2 && top_f[1][1] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2 && back_f[0][1] == 2){
+        // 3ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 2º CASO (OLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[1][1] == 2 && top_f[0][2] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2){
+        // 4ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 2º CASO (OLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        backIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    // 3º [F (R U R' U) F'] y' U² (R' F R F'): F R U R' U F' U² F' L F L'
+    if(top_f[1][1] == 2 && top_f[2][0] == 2 && top_f[2][2] == 2 && front_f[0][1] == 2 && right_f[0][1] == 2 && left_f[0][1] == 2 && back_f[0][0] == 2 && back_f[0][1] == 2 && back_f[0][2] ==  2){
+        // 1ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 3º CASO (OLL)] [TESTE] 1ª possibilidade\n");
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][0] == 2 && top_f[1][1] == 2 && top_f[2][0] == 2 && front_f[0][1] == 2 && left_f[0][1] == 2 && back_f[0][1] == 2 && right_f[0][0] == 2 && right_f[0][1] == 2 && right_f[0][2] == 2){
+        // 2ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 3º CASO (OLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][0] == 2 && top_f[0][2] == 2 && top_f[1][1] == 2 && front_f[0][0] == 2 && front_f[0][1] == 2 && front_f[0][2] == 2 && right_f[0][1] == 2 && back_f[0][1] == 2 && left_f[0][1] == 2){
+        // 3ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 3º CASO (OLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if(top_f[0][2] == 2 && top_f[1][1] == 2 && top_f[2][2] == 2 && front_f[0][1] == 2 && right_f[0][1] == 2 && back_f[0][1] == 2 && left_f[0][0] == 2 && left_f[0][1] == 2 && left_f[0][2] == 2){
+        // 4ª possibilidade
+        printf("[NO EDGES FLIPPED CORRECTLY 3º CASO (OLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        frontClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        leftIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
 }   
 
 
@@ -11099,18 +11505,18 @@ int main(int argc, char** argv) {
 
 
     leftClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    frontClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     frontIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     leftIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     frontClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock180(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    frontClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     frontIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    
     
     montando = 1;
 
