@@ -11,6 +11,7 @@
 /*
  * 1º passo: fazer a cruz branca  (OK)
  * 2º passo: F2L (OK)
+ * 3º passo: OLL (OK)
  */
 
 struct Face {
@@ -11686,6 +11687,146 @@ void oll(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], in
 }   
 
 
+void pll(int left_f[][3], int front_f[][3], int right_f[][3], int top_f[][3], int bottom_f[][3], int back_f[][3]) {
+    
+    // PERMUTATIONS OF EDGES OR CORNERS ONLY
+
+    // 1º R² U (R U R' U')(R' U')(R' U R')
+    if((back_f[0][0] == back_f[0][1] && back_f[0][1] == back_f[0][2]) && (right_f[0][2] == right_f[0][0] && right_f[0][0] == left_f[0][1]) && (front_f[0][0] == front_f[0][2] && front_f[0][2] == right_f[0][1]) && (left_f[0][0] == left_f[0][2] && left_f[0][2] == front_f[0][1])){
+        // 1ª possibilidade
+        printf("[PERMUTATIONS OF EDGES OR CORNERS ONLY 1º CASO (PLL)] [TESTE] 1ª possibilidade\n");
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if((right_f[0][0] == right_f[0][1] && right_f[0][1] == right_f[0][2]) && (front_f[0][0] == front_f[0][2] && front_f[0][2] == back_f[0][1]) && (front_f[0][1] == left_f[0][0] && left_f[0][0] == left_f[0][2]) && (back_f[0][2] == back_f[0][0] && back_f[0][0] == left_f[0][1])){
+        // 2ª possibilidade
+        printf("[PERMUTATIONS OF EDGES OR CORNERS ONLY 1º CASO (PLL)] [TESTE] 2ª possibilidade\n");
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if((front_f[0][0] == front_f[0][1] && front_f[0][1] == front_f[0][2]) && (right_f[0][0] == right_f[0][2] && right_f[0][2] == back_f[0][1]) && (right_f[0][1] == left_f[0][0] && left_f[0][0] == left_f[0][2]) && (back_f[0][0] == back_f[0][2] && back_f[0][2] == left_f[0][1])){
+        // 3ª possibilidade
+        printf("[PERMUTATIONS OF EDGES OR CORNERS ONLY 1º CASO (PLL)] [TESTE] 3ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if((left_f[0][0] == left_f[0][1] && left_f[0][1] == left_f[0][2]) && (front_f[0][0] == front_f[0][2] && front_f[0][2] == right_f[0][1]) && (front_f[0][1] == back_f[0][0] && back_f[0][0] == back_f[0][2]) && (right_f[0][0] == right_f[0][2] && right_f[0][2] == back_f[0][1])){
+        // 4ª possibilidade
+        printf("[PERMUTATIONS OF EDGES OR CORNERS ONLY 1º CASO (PLL)] [TESTE] 4ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+    
+    // 2º U² (R U R' U)(R' U' R' U)(R U' R' U') R² U R
+    if((front_f[0][0] == front_f[0][2] && front_f[0][2] == right_f[0][1]) && (right_f[0][0] == right_f[0][2] && right_f[0][2] == front_f[0][1]) && (back_f[0][0] == back_f[0][2] && back_f[0][2] == left_f[0][1]) && (left_f[0][0] == left_f[0][2] && left_f[0][2] == back_f[0][1])){
+        // 1ª possibilidade
+        printf("[PERMUTATIONS OF EDGES OR CORNERS ONLY 2º CASO (PLL)] [TESTE] 1ª possibilidade\n");
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if((front_f[0][0] == front_f[0][2] && front_f[0][2] == left_f[0][1]) && (left_f[0][0] == left_f[0][2] && left_f[0][2] == front_f[0][1]) && (right_f[0][0] == right_f[0][2] && right_f[0][2] == back_f[0][1]) && (back_f[0][0] == back_f[0][2] && back_f[0][2] == right_f[0][1])){
+        // 2ª possibilidade
+        printf("[PERMUTATIONS OF EDGES OR CORNERS ONLY 2º CASO (PLL)] [TESTE] 2ª possibilidade\n");
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }/* else if(front_f[]){
+        // 3ª possibilidade
+        printf("[PERMUTATIONS OF EDGES OR CORNERS ONLY 2º CASO (PLL)] [TESTE] 3ª possibilidade\n");
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+        rightClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }*/
+    
+    
+     //Mover o topo para "juntar" as cores certas
+
+    if (front_f[1][1] == right_f[0][0]) {
+        topClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[1][1] == back_f[0][0]) {
+        topClock180(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    } else if (front_f[1][1] == left_f[0][0]) {
+        topIClock(left_f, front_f, right_f, top_f, bottom_f, back_f);
+    }
+    
+}
+
+
 void imprimirCubo(struct Cubo cubo) {
     int i, j;
     int matriz_front[3][3];
@@ -11800,19 +11941,23 @@ int main(int argc, char** argv) {
     }
 
 
-    leftClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    frontClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    frontIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    leftClock180(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightClock180(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    backClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    backIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    backIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
-    leftClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    rightClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
     rightIClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    topClock(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    
     
     
     montando = 1;
@@ -11836,7 +11981,7 @@ int main(int argc, char** argv) {
 
     //segundaCamada(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
 
-    oll(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
+    pll(cubo.left.face, cubo.front.face, cubo.right.face, cubo.top.face, cubo.bottom.face, cubo.back.face);
 
     imprimirCubo(cubo);
 
